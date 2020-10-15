@@ -3,9 +3,65 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="<%= BASE_URL %>favicon.ico" />
     <title>Page01 - HTML Slicing</title>
   </head>
   <body>
-    <h1>Page 01</h1>
+    <div class="container page-container">
+      <div class="row">
+        <div class="col-12">
+          <div class="card">
+            <label class="card__label card__label--light"
+              >Search for recipes</label
+            >
+            <div class="search-input">
+              <i class="fas fa-search search-input__icon"></i>
+              <input
+                type="text"
+                class="search-input__input"
+                placeholder="Your email address"
+              />
+            </div>
+          </div>
+        </div>
+        <div class="col-12 mt-4">
+          <div class="card card--light">
+            <label class="card__label">Difficulty</label>
+            <div class="radio-input">
+              <div class="radio-input__input-group">
+                <input
+                  class="radio-input__input"
+                  type="radio"
+                  name="difficulty"
+                  value="Easy"
+                  id="difficulty-easy"
+                />
+                <label for="difficulty-easy" class="radio-input__button">Easy</label>
+              </div>
+              <div class="radio-input__input-group">
+                <input
+                  class="radio-input__input"
+                  type="radio"
+                  name="difficulty"
+                  value="Medium"
+                  id="difficulty-medium"
+                />
+                <label for="difficulty-medium" class="radio-input__button">Medium</label>
+              </div>
+              <div class="radio-input__input-group">
+                <input
+                  class="radio-input__input"
+                  type="radio"
+                  name="difficulty"
+                  value="Hard"
+                  id="difficulty-hard"
+                />
+                <label for="difficulty-hard" class="radio-input__button">Hard</label>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </body>
 </html>

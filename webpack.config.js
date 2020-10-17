@@ -65,7 +65,11 @@ module.exports = {
   devServer: {
     index: 'index.html',
     hot: true,
-    watchContentBase: true
+    watchContentBase: true,
+    contentBase: [
+      path.join(__dirname, 'static'),
+      path.join(__dirname, 'src/templates')
+    ]
   },
   devtool: '#eval-source-map',
   module: {

@@ -1,3 +1,14 @@
 @import '~bootstrap';
 @import './common/mixin';
 @import './common/function';
+
+@include block(page-info) {
+  border: 0;
+  @include element(image) {
+    width: 100px;
+  }
+  @include element(link) {
+    font-size: large;
+    margin-left: 10px;
+  }
+}

@@ -24,6 +24,7 @@ button:focus {
 }
 
 .page-container {
+  padding-bottom: 2rem;
   padding-top: 2rem;
 }
 
@@ -33,17 +34,75 @@ button:focus {
   border-radius: $radius;
   display: inline-block;
   padding: 20px;
-
+  position: relative;
   @include element(label) {
     font-weight: bolder;
     @include modifier(light) {
       color: $text-light;
     }
   }
+  @include element(description) {
+    font-size: small;
+  }
+  @include element(introduction) {
+    display: flex;
+    width: 480px;
+  }
+  @include element(introduction-info) {
+    padding: 18px 14px;
+  }
+  @include element(introduction-image) {
+    $width: 140px;
 
+    border-radius: $radius;
+    flex: 0 0 $width;
+    overflow: hidden;
+
+    img {
+      width: $width;
+    }
+  }
+  @include element(introduction-score) {
+    color: $color-03;
+  }
+  @include element(collect-button) {
+    align-items: center;
+    border: 1px solid $color-05;
+    border-radius: 30px;
+    display: flex;
+    height: 28px;
+    justify-content: center;
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    width: 28px;
+  }
+  @include element(banner) {
+    background-image: url('./images/food-banner-01.jpg');
+    background-position: bottom center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-top-left-radius: $radius;
+    border-top-right-radius: $radius;
+    height: 150px;
+    margin-bottom: 20px;
+    margin-left: -20px;
+    margin-right: -20px;
+    margin-top: -20px;
+    overflow: hidden;
+  }
+  @include element(form) {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    width: 240px;
+  }
   @include modifier(light) {
     background-color: $text-light;
     box-shadow: 0 5px 10px rgba(235, 89, 76, 0.5);
+  }
+  @include modifier(full) {
+    width: 100%;
   }
 }
 
@@ -99,5 +158,107 @@ button:focus {
     padding: 5px 10px;
     transition: all linear 0.3s;
     width: 100%;
+  }
+}
+
+@include block(icon-span) {
+  align-items: center;
+  display: flex;
+  @include element(icon) {
+    font-size: large;
+  }
+  @include element(text) {
+    font-size: small;
+    padding-left: 8px;
+  }
+}
+
+@include block(input) {
+  border: 1px solid $color-05;
+  border-radius: 5px;
+  display: block;
+  padding: 12px;
+  width: 100%;
+}
+
+@include block(button) {
+  background: $color-03;
+  border: 0;
+  border-radius: 5px;
+  box-shadow: 0 5px 10px rgba(235, 89, 76, 0.5);
+  color: $text-light;
+  display: block;
+  padding: 16px;
+  text-align: center;
+  width: 100%;
+}
+
+@include block(carousel) {
+  position: relative;
+  @include element(inner-container) {
+    display: flex;
+    justify-content: space-between;
+    padding-left: 50px;
+    padding-right: 50px;
+  }
+  @include element(item) {
+    align-items: center;
+    border: 1px solid transparent;
+    border-radius: $radius;
+    display: flex;
+    flex-direction: column;
+    max-width: 120px;
+    padding: 10px;
+    text-align: center;
+    transition: all ease-in-out 0.5s;
+    
+    &:hover {
+      border: 1px solid rgba(235, 89, 76, 0.2);
+    }
+  }
+  @include element(item-image) {
+    $size: 80px;
+
+    border-radius: $size / 2;
+    height: $size;
+    overflow: hidden;
+    width: $size;
+
+    img {
+      width: $size;
+    }
+  }
+  @include element(item-text) {
+    color: #999;
+    font-size: small;
+    margin-top: 20px;
+  }
+  @include element(nav) {
+    display: flex;
+    justify-content: space-between;
+    left: 0;
+    width: 100%;
+  }
+  @include element(nav-button) {
+    align-items: center;
+    background: rgba(235, 89, 76, 0.1);
+    border-radius: 30px;
+    color: $color-03;
+    display: inline-block;
+    display: flex;
+    height: 30px;
+    justify-content: center;
+    position: absolute;
+    width: 30px;
+    @include modifier(prev) {
+      left: 0;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+    @include modifier(next) {
+      right: 0;
+      top: 50%;
+      transform: translateY(-50%);
+    }
   }
 }

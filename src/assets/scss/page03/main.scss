@@ -1,0 +1,171 @@
+@import '~bootstrap';
+@import '../common/mixin';
+@import '../common/function';
+
+$color-1: #ebebeb;
+$color-2: #d46c94;
+$color-3: #8d8e93;
+$color-4: #333a60;
+$color-5: #f3d36c;
+$color-6: #dc779c;
+
+html,
+body {
+  min-height: 100%;
+}
+
+button:focus {
+  outline: none;
+}
+
+@include block(page-container) {
+  min-height: 100%;
+  padding-bottom: 20px;
+  padding-top: 20px;
+}
+
+@include block(article-block) {
+  background: #fff;
+  box-shadow: 5px 5px 10px 1px rgba(0, 0, 0, 0.2);
+  color: $color-4;
+  padding: 30px 30px 30px 60px;
+  width: 400px;
+  @include element(counter) {
+    color: $color-3;
+    text-align: right;
+  }
+  @include element(title) {
+    font-weight: bold;
+  }
+  @include element(body) {
+    display: flex;
+    padding-top: 10px;
+  }
+  @include element(content) {
+    padding-right: 40px;
+  }
+  @include element(nav-container) {
+    align-items: flex-end;
+    display: flex;
+
+    > button:first-child {
+      margin-right: 15px;
+    }
+  }
+  @include element(nav-button) {
+    background: transparent;
+    border: 0;
+    border-radius: 50%;
+    color: $color-1;
+    height: 40px;
+    transition: all 0.5s ease-in-out;
+    width: 40px;
+    @include modifier(active) {
+      background-color: $color-2;
+      color: #fff;
+    }
+  }
+  @include element(nav-button) {
+    &:hover {
+      background-color: $color-2;
+      color: #fff;
+    }
+  }
+}
+
+@include block(call-to-action) {
+  background-color: $color-4;
+  box-shadow: 5px 5px 10px 1px rgba(0, 0, 0, 0.2);
+  color: #fff;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  @include element(content) {
+    align-items: center;
+    display: flex;
+    flex: 1;
+    justify-content: space-between;
+    padding: 32px 30px;
+    @include modifier(center) {
+      justify-content: center;
+    }
+  }
+  @include element(button) {
+    background-color: $color-5;
+    border: 0;
+    padding-left: 25px;
+    padding-right: 25px;
+    @include modifier(square) {
+      width: 100px;
+    }
+    @include modifier(pink) {
+      background-color: $color-2;
+      color: #fff;
+    }
+  }
+}
+
+@include block(large-text) {
+  font-size: x-large;
+}
+
+@include block(v-center) {
+  align-items: center;
+  display: flex;
+}
+
+@include block(square-button) {
+  align-items: center;
+  background-color: #fff;
+  border: 0;
+  box-shadow: 5px 5px 10px 1px rgba(0, 0, 0, 0.2);
+  display: flex;
+  height: 100px;
+  justify-content: center;
+  width: 100px;
+  @include modifier(pink) {
+    background-color: $color-2;
+    color: #fff;
+  }
+  @include modifier(large) {
+    height: 200px;
+    width: 200px;
+  }
+}
+
+@include block(card) {
+  box-shadow: 5px 5px 10px 1px rgba(0, 0, 0, 0.2);
+  max-width: 500px;
+  min-width: 300px;
+  @include element(body) {
+    padding: 100px;
+    @include modifier(for-sections) {
+      align-items: flex-end;
+      display: flex;
+      justify-content: flex-end;
+      padding: 100px 0 0;
+    }
+  }
+  @include element(button) {
+    box-shadow: none;
+  }
+}
+
+@include block(sections) {
+  display: inline-block;
+  padding: 0 0 30px;
+  @include element(section) {
+    display: inline-block;
+    padding: 0 30px 0 0;
+  }
+  @include element(title) {
+    font-weight: bolder;
+  }
+  @include element(content) {
+    padding-top: 10px;
+
+    p {
+      margin-bottom: 0;
+    }
+  }
+}

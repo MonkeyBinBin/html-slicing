@@ -127,6 +127,9 @@ button:focus {
     background-color: $color-2;
     color: #fff;
   }
+  @include modifier(none-shadow) {
+    box-shadow: none;
+  }
   @include modifier(large) {
     height: 200px;
     width: 200px;
@@ -135,7 +138,6 @@ button:focus {
 
 @include block(card) {
   box-shadow: 5px 5px 10px 1px rgba(0, 0, 0, 0.2);
-  max-width: 500px;
   min-width: 300px;
   @include element(body) {
     padding: 100px;
@@ -146,17 +148,34 @@ button:focus {
       padding: 100px 0 0;
     }
   }
+  @include element(title) {
+    font-weight: bolder;
+  }
+  @include element(content) {
+    padding-top: 10px;
+  }
   @include element(button) {
     box-shadow: none;
+  }
+  @include element(footer) {
+    @include modifier(padding-left) {
+      padding-left: 100px;
+    }
+  }
+  @include element(link) {
+    background: transparent;
+    border: 0;
+    margin-right: 30px;
+    padding: 0;
   }
 }
 
 @include block(sections) {
   display: inline-block;
-  padding: 0 0 30px;
+  padding: 0 10px 60px 0;
   @include element(section) {
     display: inline-block;
-    padding: 0 30px 0 0;
+    padding: 0 60px 0 0;
   }
   @include element(title) {
     font-weight: bolder;

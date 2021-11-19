@@ -5,7 +5,8 @@
   "main": "./src/index.js",
   "scripts": {
     "start": "cross-env NODE_ENV=development webpack-dev-server",
-    "build": "cross-env NODE_ENV=production webpack"
+    "build": "cross-env NODE_ENV=production webpack",
+    "build:gh-pages": "cross-env NODE_ENV=production BASE_URL=/html-slicing/ webpack"
   },
   "author": "TP-Wenpin",
   "license": "ISC",

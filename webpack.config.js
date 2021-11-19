@@ -38,7 +38,7 @@ function generateEntry (entryDir) {
 
 const plugins = [
   new webpack.DefinePlugin({
-    BASE_URL: JSON.stringify('/')
+    BASE_URL: JSON.stringify(process.env.BASE_URL || '/')
   }),
   new CopyPlugin({
     patterns: [{ from: 'static' }]
